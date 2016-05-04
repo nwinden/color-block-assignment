@@ -86,7 +86,7 @@ $(function(){
   //takes in a shuffled array and resets the board dynamically
   function shuffleColors(array) {
 
-    //loops through the array
+    //loops through the array and creates the boxes
     for (var i = 0; i < array.length; i++) {
       game.append('<div class="box ' + array[i] + '"></div>');
       $('.' + array[i]).data('color',array[i]);
