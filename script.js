@@ -1,18 +1,21 @@
 $(function(){
+
+  //an array to be shuffled throughout to dynamically choose colors
+  var colorArr = ['Red','Green','Blue','Yellow'];
   //the color the player is trying to select chosen by a function
-  var answer = chooseColor();
+  var answer = chooseColor(colorArr);
   //the number of correct answers chosen
   var numCorrect = 0;
   //the number of incorrect answers chosen
   var numIncorrect = 0;
   //jQuery shorthand
   var game = $('.game');
-  //an array to be shuffled throughout to dynamically choose colors
-  var shuffleArr = ['Red','Green','Blue','Yellow'];
+
+
 
   //tells which color needs to be chosen and dynamically sets the board
   $('h2').text('Choose the color ' + answer + '!');
-  shuffleColors(shuffle(shuffleArr));
+  shuffleColors(shuffle(colorArr));
 
   //listens to which box the player chooses and calls the chooseAnswer function
   $('main').on('click', '.box', chooseAnswer);
@@ -32,14 +35,14 @@ $(function(){
       $('.correct').text('Correct: ' + numCorrect);
 
       //sets the next color to be selected
-      answer = chooseColor();
+      answer = chooseColor(colorArr);
       $('h2').text('Choose the color ' + answer + '!');
 
       //clears the board
       game.children().remove();
 
       //resets the board with a random shuffling of the colors
-      shuffleColors(shuffle(shuffleArr));
+      shuffleColors(shuffle(colorArr));
 
       //happens if the player chooses incorrectly
     } else {
@@ -56,30 +59,11 @@ $(function(){
   }
 
   //function finds which color to be selected by the player
-  function chooseColor(){
+  function chooseColor(array){
 
-    //finds a random number from 1-4
-    var randomNum = Math.round(Math.random() * (4 - 1) + 1);
-    //the color choice to be returned
-    var randomChoice = '';
-
-    //depending on which number was randomly found, chooses a color
-    switch (randomNum) {
-      case 1:
-        randomChoice = 'Red';
-        break;
-      case 2:
-        randomChoice = 'Green';
-        break;
-      case 3:
-        randomChoice = 'Blue';
-        break;
-      case 4:
-        randomChoice = 'Yellow';
-        break;
-    }
-
-    return randomChoice;
+    //chooses a random color from the color array
+    var randomNum = Math.round(Math.random() * 3);
+    return array[randomNum];
 
   }
 
