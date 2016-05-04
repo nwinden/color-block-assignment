@@ -8,7 +8,7 @@ $(function(){
   //jQuery shorthand
   var game = $('.game');
   //an array to be shuffled throughout to dynamically choose colors
-  var shuffleArr = [1,2,3,4];
+  var shuffleArr = ['Red','Green','Blue','Yellow'];
 
   //tells which color needs to be chosen and dynamically sets the board
   $('h2').text('Choose the color ' + answer + '!');
@@ -88,26 +88,8 @@ $(function(){
 
     //loops through the array
     for (var i = 0; i < array.length; i++) {
-
-      //appends the random color div to the DOM according to the number returned
-      switch (array[i]) {
-        case 1:
-          game.append('<div class="box red"></div>');
-          $('.red').data('color','Red');
-          break;
-        case 2:
-          game.append('<div class="box green"></div>');
-          $('.green').data('color','Green');
-          break;
-        case 3:
-          game.append('<div class="box blue"></div>');
-          $('.blue').data('color', 'Blue');
-          break;
-        case 4:
-          game.append('<div class="box yellow"></div>');
-          $('.yellow').data('color','Yellow');
-          break;
-      }
+      game.append('<div class="box ' + array[i] + '"></div>');
+      $('.' + array[i]).data('color',array[i]);
     }
   }
 
