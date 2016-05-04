@@ -1,0 +1,52 @@
+body {
+  background-color: grey;
+}
+
+h1, h2, p{
+  text-align: center;
+  padding:
+}
+
+h1 {
+    color: darkred;
+}
+
+main {
+  height: auto;
+  width: 800px;
+  background-color: beige;
+  border-radius: 10px;
+  margin: auto;
+}
+
+main * {
+  padding: 20px;
+}
+
+.game {
+  margin: auto;
+}
+
+.red, .green, .blue, .yellow {
+
+  display:inline-block;
+  height:150px;
+  width:150px;
+}
+
+.red {
+
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
