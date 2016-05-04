@@ -78,7 +78,7 @@ $(function(){
   }
 
   /*
-  a function that takes in an array and returns a similar array with shuffled
+  a function that takes in an array and returns the same array with shuffled
   values
   @param array: the array to be shuffled
   */
